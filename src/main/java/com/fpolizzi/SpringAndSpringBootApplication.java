@@ -12,5 +12,12 @@ public class SpringAndSpringBootApplication {
                 SpringAndSpringBootApplication.class,
                 args
         );
+
+        // print out all beans that are in the spring container
+        String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+
     }
 }
