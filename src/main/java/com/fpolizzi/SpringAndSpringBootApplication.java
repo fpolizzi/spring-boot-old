@@ -19,5 +19,7 @@ public class SpringAndSpringBootApplication {
             System.out.println(beanDefinitionName);
         }
 
+        // total number of beans in the spring container
+        System.out.println("\nNumber of Beans: " + beanDefinitionNames.length);
     }
 }
