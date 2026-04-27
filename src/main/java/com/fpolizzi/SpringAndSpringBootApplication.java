@@ -1,5 +1,7 @@
 package com.fpolizzi;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -68,6 +70,12 @@ public class SpringAndSpringBootApplication {
 
     @Service
     public class UserService {
+
+        @PostConstruct
+        public void init() {
+
+            System.out.println("Before bean creation..");
+        }
 
         public List<User> getUsers() {
 
