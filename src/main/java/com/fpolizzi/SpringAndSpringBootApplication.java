@@ -1,6 +1,5 @@
 package com.fpolizzi;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -50,5 +49,12 @@ public class SpringAndSpringBootApplication {
             System.out.println(redBean());
             System.out.println(blueBean());
         };
+    }
+
+    record User(
+            int id,
+            String name
+    ) {
+
     }
 }
