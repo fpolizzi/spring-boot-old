@@ -71,6 +71,11 @@ public class SpringAndSpringBootApplication {
     @Service
     public class UserService {
 
+        public UserService() {
+
+            System.out.println("UserService Constructor");
+        }
+
         @PostConstruct
         public void init() {
 
