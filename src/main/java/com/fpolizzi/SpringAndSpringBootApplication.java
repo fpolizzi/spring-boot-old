@@ -45,13 +45,15 @@ public class SpringAndSpringBootApplication {
     // execute CommandLineRunner
     @Bean
     CommandLineRunner commandLineRunner(String redBean,
-                                        String blueBean) {
+                                        String blueBean,
+                                        UserService userService) {
 
         return args -> {
 
             System.out.println("Hello from CommandLineRunner");
             System.out.println(redBean());
             System.out.println(blueBean());
+
         };
     }
 
