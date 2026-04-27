@@ -77,6 +77,13 @@ public class SpringAndSpringBootApplication {
             System.out.println("Before bean creation..");
         }
 
+        @PreDestroy
+        public void tearDown() {
+
+            System.out.println("Before bean destroying..");
+        }
+
+
         public List<User> getUsers() {
 
             return List.of(
