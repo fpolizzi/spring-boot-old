@@ -5,6 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class SpringAndSpringBootApplication {
@@ -18,7 +22,7 @@ public class SpringAndSpringBootApplication {
         // print out all beans that are in the spring container
         String[] beanDefinitionNames = context.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
-            // System.out.println(beanDefinitionName);
+            System.out.println(beanDefinitionName);
         }
 
         // total number of beans in the spring container
@@ -51,10 +55,21 @@ public class SpringAndSpringBootApplication {
         };
     }
 
-    record User(
+    public record User(
             int id,
             String name
     ) {
+    }
 
+    @Component
+    public class UserService {
+
+        public List<User> getUsers() {
+
+            return List.of(
+                    new User(1, "John Doe"),
+                    new User(2, "Jane Doe")
+            );
+        }
     }
 }
