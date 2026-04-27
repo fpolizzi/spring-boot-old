@@ -18,7 +18,7 @@ public class SpringAndSpringBootApplication {
         // print out all beans that are in the spring container
         String[] beanDefinitionNames = context.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
-            System.out.println(beanDefinitionName);
+            // System.out.println(beanDefinitionName);
         }
 
         // total number of beans in the spring container
@@ -34,11 +34,12 @@ public class SpringAndSpringBootApplication {
 
     // execute CommandLineRunner
     @Bean
-    CommandLineRunner commandLineRunner() {
+    CommandLineRunner commandLineRunner(String foo) {
 
         return args -> {
 
             System.out.println("Hello from CommandLineRunner");
+            System.out.println(foo);
         };
     }
 }
