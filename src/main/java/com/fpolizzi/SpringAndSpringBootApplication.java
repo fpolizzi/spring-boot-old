@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -66,7 +66,7 @@ public class SpringAndSpringBootApplication {
     ) {
     }
 
-    @Component
+    @Service
     public class UserService {
 
         public List<User> getUsers() {
