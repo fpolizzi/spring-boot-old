@@ -3,6 +3,7 @@ package com.fpolizzi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringAndSpringBootApplication {
@@ -21,5 +22,11 @@ public class SpringAndSpringBootApplication {
 
         // total number of beans in the spring container
         System.out.println("\nNumber of Beans: " + beanDefinitionNames.length);
+    }
+
+    @Bean
+    public String readBean() {
+
+        return "Manchester United";
     }
 }
