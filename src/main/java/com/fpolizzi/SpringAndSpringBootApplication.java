@@ -1,5 +1,6 @@
 package com.fpolizzi;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -24,9 +25,20 @@ public class SpringAndSpringBootApplication {
         System.out.println("\nNumber of Beans: " + beanDefinitionNames.length);
     }
 
+    // user-defined bean
     @Bean
     public String readBean() {
 
         return "Manchester United";
+    }
+
+    // execute CommandLineRunner
+    @Bean
+    CommandLineRunner commandLineRunner() {
+
+        return args -> {
+
+            System.out.println("Hello from CommandLineRunner");
+        };
     }
 }
