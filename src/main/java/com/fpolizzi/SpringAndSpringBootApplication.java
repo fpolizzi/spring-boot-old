@@ -53,6 +53,7 @@ public class SpringAndSpringBootApplication {
             System.out.println("Hello from CommandLineRunner");
             System.out.println(redBean());
             System.out.println(blueBean());
+            System.out.println(userService.getUsers());
 
         };
     }
