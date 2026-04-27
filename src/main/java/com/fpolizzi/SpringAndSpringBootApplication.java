@@ -1,5 +1,6 @@
 package com.fpolizzi;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +27,7 @@ public class SpringAndSpringBootApplication {
     }
 
     // user-defined bean
-    @Bean
+    @Bean("redBeanObject")
     public String readBean() {
 
         return "Manchester United";
@@ -34,7 +35,7 @@ public class SpringAndSpringBootApplication {
 
     // execute CommandLineRunner
     @Bean
-    CommandLineRunner commandLineRunner(String foo) {
+    CommandLineRunner commandLineRunner(@Qualifier("redBeanObject") String foo) {
 
         return args -> {
 
