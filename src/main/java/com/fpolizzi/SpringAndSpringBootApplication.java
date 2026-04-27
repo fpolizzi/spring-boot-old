@@ -27,20 +27,28 @@ public class SpringAndSpringBootApplication {
     }
 
     // user-defined bean
-    @Bean("redBeanObject")
-    public String readBean() {
+    @Bean
+    public String redBean() {
 
         return "Manchester United";
     }
 
+    @Bean
+    public String blueBean() {
+
+        return "Chelsea";
+    }
+
     // execute CommandLineRunner
     @Bean
-    CommandLineRunner commandLineRunner(@Qualifier("redBeanObject") String foo) {
+    CommandLineRunner commandLineRunner(String redBean,
+                                        String blueBean) {
 
         return args -> {
 
             System.out.println("Hello from CommandLineRunner");
-            System.out.println(foo);
+            System.out.println(redBean());
+            System.out.println(blueBean());
         };
     }
 }
