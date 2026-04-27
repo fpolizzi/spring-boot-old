@@ -7,8 +7,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class SpringAndSpringBootApplication {
@@ -73,6 +73,13 @@ public class SpringAndSpringBootApplication {
                     new User(1, "John Doe"),
                     new User(2, "Jane Doe")
             );
+        }
+
+        public Optional<User> getUserById(int id) {
+
+            return getUsers().stream()
+                    .filter(user -> user.id == id)
+                    .findFirst();
         }
     }
 }
